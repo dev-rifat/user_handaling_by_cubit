@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'app/modules/counters/servies/cubit_services.dart';
 import 'app/modules/counters/view/screens/counter_screen.dart';
+import 'app/modules/products/screens/products_screen.dart';
+import 'app/modules/products/services/e_bloc.dart';
 import 'app/modules/users/services/user_service.dart';
 import 'app/modules/users/view/user_list_screen.dart';
 
@@ -20,8 +22,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => CounterServiceCubit()),
         BlocProvider(create: (context) => UserListService()),
+        BlocProvider(create: (context) => BlocProducts()),
       ],
-      child: MaterialApp(home: UserListScreen()),
+      child: MaterialApp(home: ProductsScreen()),
     );
   }
 }
